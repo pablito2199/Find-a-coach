@@ -1,9 +1,33 @@
 <template>
   <header>
     <nav>
-      <h1>
-        <router-link :to="'/'" replace>Find a coach</router-link>
-      </h1>
+      <ul>
+        <a href="https://github.com/pablito2199/Find-a-coach" target="_blank">
+          <v-icon
+            name="bi-github"
+            title="GitHub - pablito2199/Find-a-coach"
+            scale="2"
+            fill="#cdf391"
+            animation="wrench"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/pablo-tarr%C3%ADo-otero-806b52204/"
+          target="_blank"
+        >
+          <v-icon
+            name="bi-linkedin"
+            title="LinkedIn - Pablo Tarrío Otero"
+            scale="2"
+            fill="#cdf391"
+            animation="wrench"
+            style="padding: 0"
+          />
+        </a>
+        <h1>
+          <router-link :to="'/'" replace>Find a coach</router-link>
+        </h1>
+      </ul>
       <ul>
         <li>
           <router-link :to="'/coaches'" replace>All coaches</router-link>
