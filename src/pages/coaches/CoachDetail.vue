@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="selectedCoach">
     <section>
       <base-card>
         <h2>{{ fullName }}</h2>
@@ -60,14 +60,17 @@ export default {
     },
   },
   methods: {
-    loadSelectedCoach() {
+    async loadSelectedCoach() {
+      await this.$store.dispatch('coaches/loadCoaches', {
+        forceRefresh: false,
+      });
       this.selectedCoach = this.$store.getters['coaches/coaches'].find(
         (coach) => coach.id === this.id
       );
     },
   },
-  created() {
-    this.loadSelectedCoach();
+  async created() {
+    await this.loadSelectedCoach();
   },
 };
 </script>
